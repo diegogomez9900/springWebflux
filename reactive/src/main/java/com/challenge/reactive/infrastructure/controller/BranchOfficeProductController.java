@@ -1,4 +1,4 @@
-package com.challenge.reactive.infrastructure.controller.endpoint;
+package com.challenge.reactive.infrastructure.controller;
 
 import com.challenge.reactive.application.handler.BranchOfficeHandler;
 import com.challenge.reactive.application.handler.BranchOfficeProductHandler;

@@ -28,9 +28,6 @@ public class BranchOfficeProductRepositoryImpl implements BranchOfficeProductRep
                 .map(mapper::entityToDomain)
                 .onErrorMap(Exception.class, e -> new SavingException(
                         "Error Saving Branch Product: " + (e.getMessage() == null ? EnumResponses.ERROR_004.getMessage() : e.getMessage()))
-                )
-                .onErrorMap(Throwable.class, e -> new SavingException(
-                        "Error Saving Branch Product: " + (e.getMessage() == null ? EnumResponses.ERROR_004.getMessage() : e.getMessage()))
                 );
     }
 
@@ -71,7 +68,7 @@ public class BranchOfficeProductRepositoryImpl implements BranchOfficeProductRep
     @Override
     public Mono<BranchOfficeProduct> findFirstByBranchOfficeIdOrderByStockDesc(Long id) {
         return repository.findFirstByBranchOfficeIdOrderByStockDesc(id)
-                .switchIfEmpty(Mono.error(new Exception("Branch Office has not associated products")))
+                .switchIfEmpty(Mono.error(new Exception("Branch Office " + id + " has not associated products")))
                 .map(mapper::entityToDomain)
                 .onErrorMap(Exception.class, e -> new GettingException(
                         "Error Getting Branch Product: " + (e.getMessage() == null ? EnumResponses.ERROR_003.getMessage() : e.getMessage()))
