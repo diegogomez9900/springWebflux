@@ -1,8 +1,6 @@
 package com.challenge.reactive.infrastructure.exception;
 
-
 import com.challenge.reactive.infrastructure.classes.GenericResponse;
-import com.challenge.reactive.infrastructure.classes.enumclasses.EnumResponses;
 import com.challenge.reactive.infrastructure.exception.classes.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
