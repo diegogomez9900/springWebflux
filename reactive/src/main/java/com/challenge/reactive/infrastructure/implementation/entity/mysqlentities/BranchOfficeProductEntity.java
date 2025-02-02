@@ -14,6 +14,6 @@ public class BranchOfficeProductEntity {
     @Id
     private Long id;
     private Long branchOfficeId;
-    private Long productId;
-    private String stock;
+    private String productId;
+    private Long stock;
 }

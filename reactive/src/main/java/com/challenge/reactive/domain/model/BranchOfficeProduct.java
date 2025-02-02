@@ -3,13 +3,13 @@ package com.challenge.reactive.domain.model;
 public class BranchOfficeProduct {
     private Long id;
     private Long branchOfficeId;
-    private Long productId;
-    private String stock;
+    private String productId;
+    private Long stock;
 
     public BranchOfficeProduct() {
     }
 
-    public BranchOfficeProduct(Long id, Long branchOfficeId, Long productId, String stock) {
+    public BranchOfficeProduct(Long id, Long branchOfficeId, String productId, Long stock) {
         this.id = id;
         this.branchOfficeId = branchOfficeId;
         this.productId = productId;
@@ -32,19 +32,19 @@ public class BranchOfficeProduct {
         this.branchOfficeId = branchOfficeId;
     }
 
-    public Long getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 
-    public String getStock() {
+    public Long getStock() {
         return stock;
     }
 
-    public void setStock(String stock) {
+    public void setStock(Long stock) {
         this.stock = stock;
     }
 }

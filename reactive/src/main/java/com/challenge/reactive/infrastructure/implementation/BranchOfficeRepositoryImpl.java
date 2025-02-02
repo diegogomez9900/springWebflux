@@ -23,8 +23,8 @@ public class BranchOfficeRepositoryImpl implements BranchOfficeRepository {
     private BranchOfficeMapper mapper;
 
     @Override
-    public Mono<BranchOffice> save(BranchOffice BranchOffice) {
-        return repository.save(mapper.domainToEntity(BranchOffice))
+    public Mono<BranchOffice> save(BranchOffice branchOffice) {
+        return repository.save(mapper.domainToEntity(branchOffice))
                 .map(mapper::entityToDomain)
                 .onErrorMap(Exception.class, e -> new SavingException(
                         "Error Saving Branch Office: " + (e.getMessage() == null ? EnumResponses.ERROR_004.getMessage() : e.getMessage()))
@@ -41,15 +41,15 @@ public class BranchOfficeRepositoryImpl implements BranchOfficeRepository {
     }
 
     @Override
-    public Mono<BranchOffice> update(BranchOffice BranchOffice) {
-        return repository.findById(BranchOffice.getId())
+    public Mono<BranchOffice> update(BranchOffice branchOffice) {
+        return repository.findById(branchOffice.getId())
                 .switchIfEmpty(Mono.error(new Exception("Branch Office not found")))
-                .flatMap(branchOffice -> {
-                    branchOffice.setName(BranchOffice.getName());
-                    branchOffice.setDescription(BranchOffice.getDescription());
-                    branchOffice.setAddress(BranchOffice.getAddress());
-                    branchOffice.setEmail(BranchOffice.getEmail());
-                    return repository.save(branchOffice);
+                .flatMap(branchOfficeObj -> {
+                    branchOfficeObj.setName(branchOffice.getName());
+                    branchOfficeObj.setDescription(branchOffice.getDescription());
+                    branchOfficeObj.setAddress(branchOffice.getAddress());
+                    branchOfficeObj.setEmail(branchOffice.getEmail());
+                    return repository.save(branchOfficeObj);
                 })
                 .map(mapper::entityToDomain)
                 .onErrorMap(Exception.class, e -> new UpdatingException(

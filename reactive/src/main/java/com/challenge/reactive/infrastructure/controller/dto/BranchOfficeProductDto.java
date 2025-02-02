@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class BranchOfficeProductDto {
     private Long id;
     private Long branchOfficeId;
-    private Long productId;
-    private String stock;
+    private String productId;
+    private Long stock;
 }
