@@ -1,8 +1,8 @@
 package com.challenge.reactive.infrastructure.configuration;
 
 import com.challenge.reactive.application.mapper.ProductMapper;
-import com.challenge.reactive.infrastructure.implementation.entity.ProductEntity;
-import com.challenge.reactive.infrastructure.implementation.repository.ProductRepositoryWithDynamoDB;
+import com.challenge.reactive.infrastructure.implementation.entity.dynamoentities.ProductEntity;
+import com.challenge.reactive.infrastructure.implementation.ProductRepositoryImplWithDynamoDB;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -49,7 +49,7 @@ public class DynamoDBConfig {
     }
 
     @Bean
-    public ProductRepositoryWithDynamoDB productRepository(DynamoDbAsyncTable<ProductEntity> productTable, ProductMapper mapper) {
-        return new ProductRepositoryWithDynamoDB(productTable, mapper);
+    public ProductRepositoryImplWithDynamoDB productRepository(DynamoDbAsyncTable<ProductEntity> productTable, ProductMapper mapper) {
+        return new ProductRepositoryImplWithDynamoDB(productTable, mapper);
     }
 }

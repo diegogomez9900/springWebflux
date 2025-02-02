@@ -32,8 +32,8 @@ public class GlobalExceptionHandler {
         return Mono.just(ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(new GenericResponse(
                         HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase(),
-                        exception.getMessage().contains(EnumResponses.ERROR_001.getMessage()) ?
-                                exception.getMessage() : EnumResponses.ERROR_002.getMessage())));
+                        exception.getMessage()))
+        );
     }
 
     @ExceptionHandler(AddException.class)

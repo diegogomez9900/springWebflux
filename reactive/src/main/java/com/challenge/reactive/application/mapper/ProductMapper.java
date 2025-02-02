@@ -2,7 +2,7 @@ package com.challenge.reactive.application.mapper;
 
 import com.challenge.reactive.domain.model.Product;
 import com.challenge.reactive.infrastructure.controller.dto.ProductDto;
-import com.challenge.reactive.infrastructure.implementation.entity.ProductEntity;
+import com.challenge.reactive.infrastructure.implementation.entity.dynamoentities.ProductEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

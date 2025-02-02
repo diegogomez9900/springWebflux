@@ -1,7 +1,6 @@
-package com.challenge.reactive.infrastructure.implementation.entity;
+package com.challenge.reactive.infrastructure.implementation.entity.dynamoentities;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;

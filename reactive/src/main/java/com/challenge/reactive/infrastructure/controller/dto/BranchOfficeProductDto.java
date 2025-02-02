@@ -7,10 +7,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class BranchOfficeDto {
+public class BranchOfficeProductDto {
     private Long id;
-    private String name;
-    private String description;
-    private String address;
-    private String email;
+    private Long branchOfficeId;
+    private Long productId;
+    private String stock;
 }
