@@ -17,6 +17,8 @@ import software.amazon.awssdk.services.dynamodb.DynamoDbAsyncClient;
 @Configuration
 public class DynamoDBConfig {
 
+    @Value("${aws.dynamo.table.name}")
+    private static String TABLE_NAME;
     @Value("${aws.accessKeyId}")
     private String accessKeyId;
 
@@ -45,7 +47,7 @@ public class DynamoDBConfig {
 
     @Bean
     public DynamoDbAsyncTable<ProductEntity> productsTable(DynamoDbEnhancedAsyncClient enhancedAsyncClient) {
-        return enhancedAsyncClient.table("products", TableSchema.fromBean(ProductEntity.class));
+        return enhancedAsyncClient.table(TABLE_NAME, TableSchema.fromBean(ProductEntity.class));
     }
 
     @Bean
