@@ -24,7 +24,7 @@ public class BranchOfficeController {
         return handler.deleteBranchOffice(id);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/update")
     public Mono<BranchOfficeDto> updateBranchOffice(@RequestBody BranchOfficeDto request) {
         return handler.updateBranchOffice(request);
     }

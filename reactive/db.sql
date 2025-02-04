@@ -1,5 +1,7 @@
 CREATE DATABASE IF NOT EXISTS `develop`;
 
+USE `develop`;
+
 CREATE TABLE `BRANCH_OFFICE` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,

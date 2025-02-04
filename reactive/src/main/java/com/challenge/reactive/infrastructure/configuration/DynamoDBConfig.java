@@ -18,7 +18,7 @@ import software.amazon.awssdk.services.dynamodb.DynamoDbAsyncClient;
 public class DynamoDBConfig {
 
     @Value("${aws.dynamo.table.name}")
-    private static String TABLE_NAME;
+    private String TABLE_NAME;
     @Value("${aws.accessKeyId}")
     private String accessKeyId;
 
